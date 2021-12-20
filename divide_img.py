@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 import torch
 
-IOU_T = 0.20
+IOU_T = 0.15
 THRES_SCORE = 0.35
 square_size = 960
 
@@ -176,9 +176,9 @@ frozen_func = wrap_frozen_graph(gd=graph_def, inputs="x:0", outputs="Identity:0"
 
 
 #lendo a imagem
-img = cv2.imread("DJI_0411.JPG")
+img = cv2.imread("parcela1.tif")
 if square_size > img.shape[0]:
 	square_size = img.shape[0]
 divh, divw = calculaHW(img.shape[0],img.shape[1])
 
-cropImagem(img,divh,divw,24)
+cropImagem(img,divh,divw,98)
